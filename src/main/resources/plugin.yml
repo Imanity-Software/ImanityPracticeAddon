@@ -1,0 +1,7 @@
+name: iSpigot-StrikePracticeAddon
+version: ${project.version}
+main: spg.lgdev.strikepractice.addon.iSpigotStrikePracticeAddon
+depend: [StrikePractice]
+commands:
+  reloadspaddon:
+    permission: ispigot.admin

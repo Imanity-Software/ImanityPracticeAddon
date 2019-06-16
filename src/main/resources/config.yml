@@ -1,0 +1,9 @@
+knockback:
+  builduhc: builduhc
+  longuhc: builduhc
+  nodebuff: nodebuff
+  sumo: sumo
+
+  #example kit:example kb profile
+
+default-knockback: vanilla
