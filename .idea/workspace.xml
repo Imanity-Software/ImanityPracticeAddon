@@ -19,32 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3d381eff-5d39-4bd1-81d3-456d5fe84c53" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/discord.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/StrikePracticeAPI.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/spg/lgdev/addon/practice/config/FileConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/spg/lgdev/addon/practice/provider/PracticeProvider.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/spg/lgdev/addon/practice/provider/impl/ProPracticeProviderImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/spg/lgdev/addon/practice/provider/impl/StrikePracticeProviderImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/spg/lgdev/addon/practice/provider/impl/mPracticeProviderImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/spg/lgdev/addon/practice/util/CC.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__leegod_ispigot_ispigot_0_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/iSpigot-StrikePracticeAddon.iml" beforeDir="false" afterPath="$PROJECT_DIR$/iSpigot-PracticeAddon.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spg/lgdev/strikepractice/addon/command/AddonCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spg/lgdev/addon/practice/command/AddonCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spg/lgdev/strikepractice/addon/iSpigotStrikePracticeAddon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spg/lgdev/addon/practice/iSpigotPracticeAddon.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spg/lgdev/strikepractice/addon/listener/StrikePracticeListener.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/plugin.yml" afterDir="false" />
-    </list>
+    <list default="true" id="3d381eff-5d39-4bd1-81d3-456d5fe84c53" name="Default Changelist" comment="Recode" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -219,8 +194,16 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1560703713105</updated>
-      <workItem from="1588125897796" duration="4203000" />
+      <workItem from="1588125897796" duration="4552000" />
     </task>
+    <task id="LOCAL-00001" summary="Recode">
+      <created>1588130124661</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1588130124661</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -236,6 +219,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Recode" />
+    <option name="LAST_COMMIT_MESSAGE" value="Recode" />
   </component>
   <component name="WindowStateProjectService">
     <state x="446" y="47" key="#com.intellij.ide.util.MemberChooser" timestamp="1588129343638">
@@ -258,6 +245,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1237" height="169" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1588129646372" />
+    <state x="233" y="73" key="Vcs.Push.Dialog.v2" timestamp="1588130130021">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="233" y="73" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1588130130021" />
     <state x="297" y="151" width="672" height="677" key="run.anything.popup" timestamp="1588129602038">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
