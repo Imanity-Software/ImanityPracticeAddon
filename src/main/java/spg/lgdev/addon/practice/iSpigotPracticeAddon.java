@@ -54,7 +54,7 @@ public final class iSpigotPracticeAddon extends JavaPlugin {
 
         this.currentProvider.registerListeners();
         long end = System.currentTimeMillis();
-        log("iSpigot Practice Addon has been loaded in " + (start - end) + "ms. Current practice plugin: " + this.currentProvider.getRequiredPlugin());
+        log("iSpigot Practice Addon has been loaded in " + (end - start) + "ms. Current practice plugin: " + this.currentProvider.getRequiredPlugin());
     }
 
     @Override

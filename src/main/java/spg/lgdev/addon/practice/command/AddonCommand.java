@@ -15,7 +15,7 @@ public class AddonCommand implements CommandExecutor {
     private String PREFIX_ERROR = CC.translate("&c[iSpigot Practice Addon]");
 
     private Consumer<CommandSender> HELP_MESSAGE = (sender -> {
-        sender.sendMessage(CC.translate(PREFIX_ERROR + " Command Usages:"));
+        sender.sendMessage(CC.translate(PREFIX + "&f Command Usages:"));
         sender.sendMessage(CC.translate("  &7/practice-addon reload &a- Reloads the addon configuration"));
         sender.sendMessage(CC.translate("  &7/practice-addon status &a- Shows the current addon status, including what practice plugin it had hooked and what knockback profiles are loaded"));
         sender.sendMessage(CC.translate("  &7/practice-addon link [kit] [knockback] &a- Links a practice kit's knockback profile with an iSpigot's knockback profile"));
@@ -35,18 +35,18 @@ public class AddonCommand implements CommandExecutor {
                     .getInstance()
                     .load();
             long end = System.currentTimeMillis();
-            sender.sendMessage(CC.translate(PREFIX + " Reloaded addon in " + (start - end) + "ms."));
+            sender.sendMessage(CC.translate(PREFIX + "&f Reloaded addon in " + (end - start) + "ms."));
 
             return true;
         } else if (args[0].equalsIgnoreCase("status")) {
-            sender.sendMessage(CC.translate(PREFIX + " Current Status:"));
-            sender.sendMessage(CC.translate("&f  Provider: " + iSpigotPracticeAddon.getInstance().getCurrentProvider().getName()));
-            sender.sendMessage(CC.translate("&a  Default Knockback: " + iSpigotPracticeAddon.getDefault()));
-            sender.sendMessage(CC.translate("&a  Loaded Knockbacks (Linked with specific kits): "));
+            sender.sendMessage(CC.translate(PREFIX + "&f Current Status:"));
+            sender.sendMessage(CC.translate("&f  Provider: &a" + iSpigotPracticeAddon.getInstance().getCurrentProvider().getName()));
+            sender.sendMessage(CC.translate("&f  Default Knockback: &a" + iSpigotPracticeAddon.getDefault()));
+            sender.sendMessage(CC.translate("&f  Loaded Knockbacks (Linked with specific kits): "));
             iSpigotPracticeAddon
                     .KNOCKBACK_PROFILES
                     .forEach((kit, profile) -> {
-                        sender.sendMessage(CC.translate("&7    -  &aPractice Kit " + kit + " has been linked with " + profile));
+                        sender.sendMessage(CC.translate("&7    -  &fPractice Kit &a" + kit + "&f has been linked with &a" + profile));
                     });
             return true;
         } else if (args[0].equalsIgnoreCase("link")) {
@@ -58,18 +58,18 @@ public class AddonCommand implements CommandExecutor {
             String kitName = args[1];
             String profileName = args[2];
 
-            if (iSpigot.INSTANCE.getKnockbackHandler().getKnockbackProfile(kitName) == null) {
+            if (iSpigot.INSTANCE.getKnockbackHandler().getKnockbackProfile(profileName) == null) {
                 sender.sendMessage(CC.translate(PREFIX_ERROR + " The specified knockback profile does not exist in iSpigot."));
                 return true;
             }
 
-            if (iSpigotPracticeAddon.getInstance().getProfileFromKit(profileName) != null) {
-                sender.sendMessage(CC.translate(PREFIX_ERROR + " The kit " + kitName + " already has a profile linked with it."));
-                return true;
+            if (iSpigotPracticeAddon.getInstance().getProfileFromKit(kitName) != null) {
+                iSpigotPracticeAddon.KNOCKBACK_PROFILES.replace(kitName, profileName);
+            } else {
+                iSpigotPracticeAddon.KNOCKBACK_PROFILES.put(kitName, profileName);
             }
 
-            iSpigotPracticeAddon.KNOCKBACK_PROFILES.put(kitName, profileName);
-            sender.sendMessage(CC.translate(PREFIX_ERROR + " You have linked the kit " + kitName + " with a knockback profile named " + profileName + "."));
+            sender.sendMessage(CC.translate(PREFIX + "&f You have linked the kit &a" + kitName + "&f with a knockback profile named &a" + profileName + "&f."));
             iSpigotPracticeAddon.getInstance()
                     .save();
             return true;
@@ -87,7 +87,7 @@ public class AddonCommand implements CommandExecutor {
             }
 
             iSpigotPracticeAddon.KNOCKBACK_PROFILES.remove(kitName);
-            sender.sendMessage(CC.translate(PREFIX_ERROR + " You have unlinked the kit " + kitName + "'s knockback profile"));
+            sender.sendMessage(CC.translate(PREFIX + "&f You have unlinked the kit &a" + kitName + "&f's knockback profile"));
             iSpigotPracticeAddon.getInstance()
                     .save();
             return true;

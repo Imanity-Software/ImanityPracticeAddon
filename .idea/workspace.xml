@@ -19,7 +19,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3d381eff-5d39-4bd1-81d3-456d5fe84c53" name="Default Changelist" comment="Recode" />
+    <list default="true" id="3d381eff-5d39-4bd1-81d3-456d5fe84c53" name="Default Changelist" comment="Potentially fixed a issue with ProPractice loading">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spg/lgdev/addon/practice/command/AddonCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spg/lgdev/addon/practice/command/AddonCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spg/lgdev/addon/practice/iSpigotPracticeAddon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spg/lgdev/addon/practice/iSpigotPracticeAddon.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -194,7 +198,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1560703713105</updated>
-      <workItem from="1588125897796" duration="4552000" />
+      <workItem from="1588125897796" duration="5497000" />
     </task>
     <task id="LOCAL-00001" summary="Recode">
       <created>1588130124661</created>
@@ -203,7 +207,21 @@
       <option name="project" value="LOCAL" />
       <updated>1588130124661</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Forgot to register listeners">
+      <created>1588130504087</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1588130504087</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Potentially fixed a issue with ProPractice loading">
+      <created>1588130684901</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1588130684902</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -222,33 +240,35 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Recode" />
-    <option name="LAST_COMMIT_MESSAGE" value="Recode" />
+    <MESSAGE value="Forgot to register listeners" />
+    <MESSAGE value="Potentially fixed a issue with ProPractice loading" />
+    <option name="LAST_COMMIT_MESSAGE" value="Potentially fixed a issue with ProPractice loading" />
   </component>
   <component name="WindowStateProjectService">
     <state x="446" y="47" key="#com.intellij.ide.util.MemberChooser" timestamp="1588129343638">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="446" y="47" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680@0.0.1280.680" timestamp="1588129343638" />
-    <state width="1237" height="169" key="GridCell.Tab.0.bottom" timestamp="1588129646373">
+    <state width="1237" height="169" key="GridCell.Tab.0.bottom" timestamp="1588131406776">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="169" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1588129646373" />
-    <state width="1237" height="169" key="GridCell.Tab.0.center" timestamp="1588129646372">
+    <state width="1237" height="169" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1588131406776" />
+    <state width="1237" height="169" key="GridCell.Tab.0.center" timestamp="1588131406776">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="169" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1588129646372" />
-    <state width="1237" height="169" key="GridCell.Tab.0.left" timestamp="1588129646371">
+    <state width="1237" height="169" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1588131406776" />
+    <state width="1237" height="169" key="GridCell.Tab.0.left" timestamp="1588131406776">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="169" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1588129646371" />
-    <state width="1237" height="169" key="GridCell.Tab.0.right" timestamp="1588129646372">
+    <state width="1237" height="169" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1588131406776" />
+    <state width="1237" height="169" key="GridCell.Tab.0.right" timestamp="1588131406776">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="169" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1588129646372" />
-    <state x="233" y="73" key="Vcs.Push.Dialog.v2" timestamp="1588130130021">
+    <state width="1237" height="169" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1588131406776" />
+    <state x="233" y="73" key="Vcs.Push.Dialog.v2" timestamp="1588130686640">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="233" y="73" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1588130130021" />
+    <state x="233" y="73" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1588130686640" />
     <state x="297" y="151" width="672" height="677" key="run.anything.popup" timestamp="1588129602038">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
