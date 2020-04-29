@@ -4,6 +4,7 @@ main: spg.lgdev.addon.practice.iSpigotPracticeAddon
 softdepend:
   - StrikePractice
   - mPractice
+  - ProPractice
 commands:
   practice-addon:
     permission: ispigot.addon.practice.admin
