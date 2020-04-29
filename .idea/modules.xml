@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/iSpigot-StrikePracticeAddon.iml" filepath="$PROJECT_DIR$/iSpigot-StrikePracticeAddon.iml" />
+      <module fileurl="file://$PROJECT_DIR$/iSpigot-PracticeAddon.iml" filepath="$PROJECT_DIR$/iSpigot-PracticeAddon.iml" />
     </modules>
   </component>
 </project>

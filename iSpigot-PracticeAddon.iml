@@ -21,11 +21,37 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: leegod.ispigot:ispigot:0.1" level="project" />
     <orderEntry type="module-library">
-      <library name="Maven: strikepractice:strikepractice:2.8.0">
+      <library name="Maven: leegod.ispigot:ispigot:unknown">
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/libs/StrikePractice.jar!/" />
+          <root url="jar://$MODULE_DIR$/libs/ispigot.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="Maven: strikepractice:strikepractice:unknown">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/libs/StrikePracticeAPI.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="Maven: mpractice:mpractice:unknown">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/libs/mPractice.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="Maven: propractice:propractice:unknown">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/libs/ProPractice.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

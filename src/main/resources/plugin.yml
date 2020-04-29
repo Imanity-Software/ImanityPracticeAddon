@@ -1,7 +1,9 @@
-name: iSpigot-StrikePracticeAddon
+name: iSpigot-PracticeAddon
 version: ${project.version}
-main: spg.lgdev.strikepractice.addon.iSpigotStrikePracticeAddon
-depend: [StrikePractice]
+main: spg.lgdev.addon.practice.iSpigotPracticeAddon
+softdepend:
+  - StrikePractice
+  - mPractice
 commands:
-  reloadspaddon:
-    permission: ispigot.admin
+  practice-addon:
+    permission: ispigot.addon.practice.admin
