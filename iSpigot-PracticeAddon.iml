@@ -22,7 +22,7 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module-library">
-      <library name="Maven: leegod.ispigot:ispigot:unknown">
+      <library name="Maven: leegod.ispigot:ispigot:1.0">
         <CLASSES>
           <root url="jar://$MODULE_DIR$/libs/ispigot.jar!/" />
         </CLASSES>
@@ -31,7 +31,7 @@
       </library>
     </orderEntry>
     <orderEntry type="module-library">
-      <library name="Maven: strikepractice:strikepractice:unknown">
+      <library name="Maven: strikepractice:strikepractice:1.0">
         <CLASSES>
           <root url="jar://$MODULE_DIR$/libs/StrikePracticeAPI.jar!/" />
         </CLASSES>
@@ -40,7 +40,7 @@
       </library>
     </orderEntry>
     <orderEntry type="module-library">
-      <library name="Maven: mpractice:mpractice:unknown">
+      <library name="Maven: mpractice:mpractice:1.0">
         <CLASSES>
           <root url="jar://$MODULE_DIR$/libs/mPractice.jar!/" />
         </CLASSES>
@@ -49,7 +49,7 @@
       </library>
     </orderEntry>
     <orderEntry type="module-library">
-      <library name="Maven: propractice:propractice:unknown">
+      <library name="Maven: propractice:propractice:1.0">
         <CLASSES>
           <root url="jar://$MODULE_DIR$/libs/ProPractice.jar!/" />
         </CLASSES>

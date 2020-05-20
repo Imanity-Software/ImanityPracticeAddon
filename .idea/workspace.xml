@@ -19,10 +19,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3d381eff-5d39-4bd1-81d3-456d5fe84c53" name="Default Changelist" comment="Potentially fixed a issue with ProPractice loading">
+    <list default="true" id="3d381eff-5d39-4bd1-81d3-456d5fe84c53" name="Default Changelist" comment="Reformatted messages">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spg/lgdev/addon/practice/command/AddonCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spg/lgdev/addon/practice/command/AddonCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spg/lgdev/addon/practice/iSpigotPracticeAddon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spg/lgdev/addon/practice/iSpigotPracticeAddon.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +68,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/libs" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ConcurrentUtil" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
@@ -101,53 +99,6 @@
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <option name="TEST_OBJECT" value="class" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="iSpigot-PracticeAddon" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="WORKING_DIRECTORY" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="iSpigot-PracticeAddon" />
-      <option name="filePath" />
-      <option name="vmParameters" />
-      <option name="alternativeJrePath" />
-      <option name="programParameters" />
-      <option name="passParentEnvs" value="true" />
-      <option name="workingDirectory" />
-      <option name="isAlternativeJrePathEnabled" value="false" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="filePath" />
-      <option name="vmParameters" />
-      <option name="alternativeJrePath" />
-      <option name="programParameters" />
-      <option name="passParentEnvs" value="true" />
-      <option name="workingDirectory" />
-      <option name="isAlternativeJrePathEnabled" value="false" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="WORKING_DIRECTORY" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -198,7 +149,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1560703713105</updated>
-      <workItem from="1588125897796" duration="5497000" />
+      <workItem from="1588125897796" duration="5990000" />
+      <workItem from="1588144098417" duration="49000" />
     </task>
     <task id="LOCAL-00001" summary="Recode">
       <created>1588130124661</created>
@@ -221,7 +173,14 @@
       <option name="project" value="LOCAL" />
       <updated>1588130684902</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Reformatted messages">
+      <created>1588131632254</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1588131632255</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -237,38 +196,44 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Recode" />
     <MESSAGE value="Forgot to register listeners" />
     <MESSAGE value="Potentially fixed a issue with ProPractice loading" />
-    <option name="LAST_COMMIT_MESSAGE" value="Potentially fixed a issue with ProPractice loading" />
+    <MESSAGE value="Reformatted messages" />
+    <option name="LAST_COMMIT_MESSAGE" value="Reformatted messages" />
   </component>
   <component name="WindowStateProjectService">
     <state x="446" y="47" key="#com.intellij.ide.util.MemberChooser" timestamp="1588129343638">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="446" y="47" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680@0.0.1280.680" timestamp="1588129343638" />
-    <state width="1237" height="169" key="GridCell.Tab.0.bottom" timestamp="1588131406776">
+    <state x="421" y="82" key="FileChooserDialogImpl" timestamp="1588144146694">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="169" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1588131406776" />
-    <state width="1237" height="169" key="GridCell.Tab.0.center" timestamp="1588131406776">
+    <state x="421" y="82" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1588144146694" />
+    <state width="1237" height="169" key="GridCell.Tab.0.bottom" timestamp="1588131905992">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="169" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1588131406776" />
-    <state width="1237" height="169" key="GridCell.Tab.0.left" timestamp="1588131406776">
+    <state width="1237" height="169" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1588131905992" />
+    <state width="1237" height="169" key="GridCell.Tab.0.center" timestamp="1588131905992">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="169" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1588131406776" />
-    <state width="1237" height="169" key="GridCell.Tab.0.right" timestamp="1588131406776">
+    <state width="1237" height="169" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1588131905992" />
+    <state width="1237" height="169" key="GridCell.Tab.0.left" timestamp="1588131905992">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="169" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1588131406776" />
-    <state x="233" y="73" key="Vcs.Push.Dialog.v2" timestamp="1588130686640">
+    <state width="1237" height="169" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1588131905992" />
+    <state width="1237" height="169" key="GridCell.Tab.0.right" timestamp="1588131905992">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="233" y="73" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1588130686640" />
+    <state width="1237" height="169" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1588131905992" />
+    <state x="233" y="73" key="Vcs.Push.Dialog.v2" timestamp="1588131633093">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="233" y="73" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1588131633093" />
     <state x="297" y="151" width="672" height="677" key="run.anything.popup" timestamp="1588129602038">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
