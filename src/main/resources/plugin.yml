@@ -1,10 +1,10 @@
-name: iSpigot-PracticeAddon
+name: ${project.artifactId}
 version: ${project.version}
-main: spg.lgdev.addon.practice.iSpigotPracticeAddon
+main: ${project.groupId}.addon.practice.${project.artifactId}
 softdepend:
   - StrikePractice
   - mPractice
   - ProPractice
 commands:
   practice-addon:
-    permission: ispigot.addon.practice.admin
+    aliases: [ispigotpracticeaddon, imanitypracticeaddon, practiceaddon]
