@@ -38,7 +38,7 @@ public final class ImanityPracticeAddon extends JavaPlugin {
 
         Set<PracticeProvider> practiceProviders = new HashSet<>();
         practiceProviders.add(new StrikePracticeProviderImpl(this));
-        practiceProviders.add(new mPracticeProviderImpl(this));
+        //practiceProviders.add(new mPracticeProviderImpl(this)); // TODO: Waiting API
         practiceProviders.add(new ProPracticeProviderImpl(this));
 
         for (PracticeProvider provider : practiceProviders) {

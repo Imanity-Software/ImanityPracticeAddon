@@ -2,8 +2,8 @@ package org.imanity.addon.practice.provider;
 
 import org.bukkit.entity.Player;
 import org.imanity.addon.practice.ImanityPracticeAddon;
-import spg.lgdev.iSpigot;
-import spg.lgdev.knockback.Knockback;
+import org.imanity.imanityspigot.knockback.Knockback;
+import org.imanity.imanityspigot.knockback.KnockbackService;
 
 public abstract class PracticeProvider {
     protected ImanityPracticeAddon plugin;
@@ -22,14 +22,9 @@ public abstract class PracticeProvider {
 
     public void pickKitKnockback(Player player, String kitName) {
         String profile = ImanityPracticeAddon.getInstance().getProfileFromKit(kitName);
-        boolean defaultKnockback = profile == null;
+        KnockbackService knockbackService = this.plugin.getServer().imanity().getKnockbackService();
 
-        Knockback knockback = defaultKnockback ? iSpigot.INSTANCE.getKnockbackHandler().getKnockbackProfile(ImanityPracticeAddon.getDefault()) : iSpigot.INSTANCE.getKnockbackHandler().getKnockbackProfile(profile);
-        if (knockback == null) {
-            ImanityPracticeAddon.warn("The " + (defaultKnockback ? "default" : "") + "knockback profile named " + profile + " does not exist." + (defaultKnockback ? " Switching to default knockback iSpigot's default knockback profile." : ""));
-            if (defaultKnockback) knockback = iSpigot.INSTANCE.getKnockbackHandler().getDefaultKnockback();
-        }
-
-        player.setKnockback(knockback);
+        Knockback knockback = knockbackService.getKnockbackByName(profile == null ? ImanityPracticeAddon.getDefault() : profile);
+        knockbackService.setKnockback(player, knockback);
     }
 }

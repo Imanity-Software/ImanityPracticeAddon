@@ -1,15 +1,7 @@
 package org.imanity.addon.practice.provider.impl;
 
-import me.abhi.practice.event.impl.MatchEndEvent;
-import me.abhi.practice.event.impl.MatchStartEvent;
-import me.abhi.practice.match.Match;
-import org.bukkit.Bukkit;
-import org.bukkit.entity.Player;
-import org.bukkit.event.EventHandler;
-import org.bukkit.event.Listener;
 import org.imanity.addon.practice.ImanityPracticeAddon;
 import org.imanity.addon.practice.provider.PracticeProvider;
-import spg.lgdev.iSpigot;
 
 public class mPracticeProviderImpl extends PracticeProvider {
 
@@ -24,7 +16,8 @@ public class mPracticeProviderImpl extends PracticeProvider {
 
     @Override
     public void registerListeners() {
-        Bukkit.getPluginManager()
+        // TODO: waiting API
+        /*Bukkit.getPluginManager()
                 .registerEvents(new Listener() {
                     @EventHandler
                     public void onMatchStart(MatchStartEvent event) {
@@ -49,6 +42,6 @@ public class mPracticeProviderImpl extends PracticeProvider {
                                     player.setKnockback(iSpigot.INSTANCE.getKnockbackHandler().getDefaultKnockback());
                                 });
                     }
-                }, this.plugin);
+                }, this.plugin);*/
     }
 }
