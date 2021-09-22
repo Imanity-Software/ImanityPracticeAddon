@@ -15,9 +15,9 @@ import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
-public final class iSpigotPracticeAddon extends JavaPlugin {
+public final class ImanityPracticeAddon extends JavaPlugin {
 
-    private static iSpigotPracticeAddon instance;
+    private static ImanityPracticeAddon instance;
 
     public static final Map<String, String> KNOCKBACK_PROFILES = new ConcurrentHashMap<>();
     private static String DEFAULT = "none";
@@ -100,7 +100,7 @@ public final class iSpigotPracticeAddon extends JavaPlugin {
         return DEFAULT;
     }
 
-    public static iSpigotPracticeAddon getInstance() {
+    public static ImanityPracticeAddon getInstance() {
         return instance;
     }
 }

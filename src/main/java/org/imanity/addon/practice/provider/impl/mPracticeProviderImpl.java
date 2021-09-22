@@ -7,13 +7,13 @@ import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.imanity.addon.practice.iSpigotPracticeAddon;
+import org.imanity.addon.practice.ImanityPracticeAddon;
 import org.imanity.addon.practice.provider.PracticeProvider;
 import spg.lgdev.iSpigot;
 
 public class mPracticeProviderImpl extends PracticeProvider {
 
-    public mPracticeProviderImpl(iSpigotPracticeAddon plugin) {
+    public mPracticeProviderImpl(ImanityPracticeAddon plugin) {
         super(plugin);
     }
 

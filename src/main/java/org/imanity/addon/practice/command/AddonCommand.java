@@ -3,7 +3,7 @@ package org.imanity.addon.practice.command;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
-import org.imanity.addon.practice.iSpigotPracticeAddon;
+import org.imanity.addon.practice.ImanityPracticeAddon;
 import org.imanity.addon.practice.util.CC;
 import spg.lgdev.iSpigot;
 
@@ -31,7 +31,7 @@ public class AddonCommand implements CommandExecutor {
 
         if (args[0].equalsIgnoreCase("reload")) {
             long start = System.currentTimeMillis();
-            iSpigotPracticeAddon
+            ImanityPracticeAddon
                     .getInstance()
                     .load();
             long end = System.currentTimeMillis();
@@ -40,10 +40,10 @@ public class AddonCommand implements CommandExecutor {
             return true;
         } else if (args[0].equalsIgnoreCase("status")) {
             sender.sendMessage(CC.translate(PREFIX + "&f Current Status:"));
-            sender.sendMessage(CC.translate("&f  Provider: &a" + iSpigotPracticeAddon.getInstance().getCurrentProvider().getName()));
-            sender.sendMessage(CC.translate("&f  Default Knockback: &a" + iSpigotPracticeAddon.getDefault()));
+            sender.sendMessage(CC.translate("&f  Provider: &a" + ImanityPracticeAddon.getInstance().getCurrentProvider().getName()));
+            sender.sendMessage(CC.translate("&f  Default Knockback: &a" + ImanityPracticeAddon.getDefault()));
             sender.sendMessage(CC.translate("&f  Loaded Knockbacks (Linked with specific kits): "));
-            iSpigotPracticeAddon
+            ImanityPracticeAddon
                     .KNOCKBACK_PROFILES
                     .forEach((kit, profile) -> {
                         sender.sendMessage(CC.translate("&7    -  &fPractice Kit &a" + kit + "&f has been linked with &a" + profile));
@@ -63,14 +63,14 @@ public class AddonCommand implements CommandExecutor {
                 return true;
             }
 
-            if (iSpigotPracticeAddon.getInstance().getProfileFromKit(kitName) != null) {
-                iSpigotPracticeAddon.KNOCKBACK_PROFILES.replace(kitName, profileName);
+            if (ImanityPracticeAddon.getInstance().getProfileFromKit(kitName) != null) {
+                ImanityPracticeAddon.KNOCKBACK_PROFILES.replace(kitName, profileName);
             } else {
-                iSpigotPracticeAddon.KNOCKBACK_PROFILES.put(kitName, profileName);
+                ImanityPracticeAddon.KNOCKBACK_PROFILES.put(kitName, profileName);
             }
 
             sender.sendMessage(CC.translate(PREFIX + "&f You have linked the kit &a" + kitName + "&f with a knockback profile named &a" + profileName + "&f."));
-            iSpigotPracticeAddon.getInstance()
+            ImanityPracticeAddon.getInstance()
                     .save();
             return true;
         } else if (args[0].equalsIgnoreCase("unlink")) {
@@ -81,14 +81,14 @@ public class AddonCommand implements CommandExecutor {
 
             String kitName = args[1];
 
-            if (iSpigotPracticeAddon.getInstance().getProfileFromKit(kitName) == null) {
+            if (ImanityPracticeAddon.getInstance().getProfileFromKit(kitName) == null) {
                 sender.sendMessage(CC.translate(PREFIX_ERROR + " The kit " + kitName + " does not have a knockback profile linked yet."));
                 return true;
             }
 
-            iSpigotPracticeAddon.KNOCKBACK_PROFILES.remove(kitName);
+            ImanityPracticeAddon.KNOCKBACK_PROFILES.remove(kitName);
             sender.sendMessage(CC.translate(PREFIX + "&f You have unlinked the kit &a" + kitName + "&f's knockback profile"));
-            iSpigotPracticeAddon.getInstance()
+            ImanityPracticeAddon.getInstance()
                     .save();
             return true;
         } else {

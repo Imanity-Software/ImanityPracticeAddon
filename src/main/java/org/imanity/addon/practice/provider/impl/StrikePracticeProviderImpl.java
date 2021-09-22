@@ -4,11 +4,11 @@ import ga.strikepractice.events.KitSelectEvent;
 import org.bukkit.Bukkit;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.imanity.addon.practice.iSpigotPracticeAddon;
+import org.imanity.addon.practice.ImanityPracticeAddon;
 import org.imanity.addon.practice.provider.PracticeProvider;
 
 public class StrikePracticeProviderImpl extends PracticeProvider {
-    public StrikePracticeProviderImpl(iSpigotPracticeAddon plugin) {
+    public StrikePracticeProviderImpl(ImanityPracticeAddon plugin) {
         super(plugin);
     }
 
