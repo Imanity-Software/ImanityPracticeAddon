@@ -1,10 +1,10 @@
-package spg.lgdev.addon.practice.command;
+package org.imanity.addon.practice.command;
 
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
-import spg.lgdev.addon.practice.iSpigotPracticeAddon;
-import spg.lgdev.addon.practice.util.CC;
+import org.imanity.addon.practice.iSpigotPracticeAddon;
+import org.imanity.addon.practice.util.CC;
 import spg.lgdev.iSpigot;
 
 import java.util.function.Consumer;

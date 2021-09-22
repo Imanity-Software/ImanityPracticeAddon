@@ -1,11 +1,11 @@
-package spg.lgdev.addon.practice.provider.impl;
+package org.imanity.addon.practice.provider.impl;
 
 import ga.strikepractice.events.KitSelectEvent;
 import org.bukkit.Bukkit;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import spg.lgdev.addon.practice.iSpigotPracticeAddon;
-import spg.lgdev.addon.practice.provider.PracticeProvider;
+import org.imanity.addon.practice.iSpigotPracticeAddon;
+import org.imanity.addon.practice.provider.PracticeProvider;
 
 public class StrikePracticeProviderImpl extends PracticeProvider {
     public StrikePracticeProviderImpl(iSpigotPracticeAddon plugin) {

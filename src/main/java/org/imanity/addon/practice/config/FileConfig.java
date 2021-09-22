@@ -1,4 +1,4 @@
-package spg.lgdev.addon.practice.config;
+package org.imanity.addon.practice.config;
 
 import java.io.File;
 import java.io.IOException;

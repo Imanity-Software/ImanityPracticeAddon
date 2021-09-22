@@ -1,7 +1,7 @@
-package spg.lgdev.addon.practice.provider;
+package org.imanity.addon.practice.provider;
 
 import org.bukkit.entity.Player;
-import spg.lgdev.addon.practice.iSpigotPracticeAddon;
+import org.imanity.addon.practice.iSpigotPracticeAddon;
 import spg.lgdev.iSpigot;
 import spg.lgdev.knockback.Knockback;
 

@@ -1,4 +1,4 @@
-package spg.lgdev.addon.practice.util;
+package org.imanity.addon.practice.util;
 
 import org.bukkit.ChatColor;
 

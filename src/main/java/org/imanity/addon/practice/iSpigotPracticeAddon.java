@@ -1,14 +1,14 @@
-package spg.lgdev.addon.practice;
+package org.imanity.addon.practice;
 
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.plugin.java.JavaPlugin;
-import spg.lgdev.addon.practice.command.AddonCommand;
-import spg.lgdev.addon.practice.config.FileConfig;
-import spg.lgdev.addon.practice.provider.PracticeProvider;
-import spg.lgdev.addon.practice.provider.impl.ProPracticeProviderImpl;
-import spg.lgdev.addon.practice.provider.impl.StrikePracticeProviderImpl;
-import spg.lgdev.addon.practice.provider.impl.mPracticeProviderImpl;
+import org.imanity.addon.practice.command.AddonCommand;
+import org.imanity.addon.practice.config.FileConfig;
+import org.imanity.addon.practice.provider.PracticeProvider;
+import org.imanity.addon.practice.provider.impl.StrikePracticeProviderImpl;
+import org.imanity.addon.practice.provider.impl.ProPracticeProviderImpl;
+import org.imanity.addon.practice.provider.impl.mPracticeProviderImpl;
 
 import java.util.HashSet;
 import java.util.Map;
