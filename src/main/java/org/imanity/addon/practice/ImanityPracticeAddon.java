@@ -32,7 +32,7 @@ public final class ImanityPracticeAddon extends JavaPlugin {
         long start = System.currentTimeMillis();
         instance = this;
 
-        getCommand("practice-addon").setExecutor(new AddonCommand());
+        getCommand("practice-addon").setExecutor(new AddonCommand(this));
         load();
 
         Set<PracticeProvider> practiceProviders = new HashSet<>();
