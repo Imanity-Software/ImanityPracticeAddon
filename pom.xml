@@ -4,19 +4,16 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>spg.lgdev.addon.practice</groupId>
-    <artifactId>ispigot-practice-addon</artifactId>
+    <groupId>org.imanity</groupId>
+    <artifactId>ImanityPracticeAddon</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <packaging>jar</packaging>
-
-    <name>iSpigot Practice Addon</name>
 
     <properties>
+        <java.version>1.8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
     <build>
-        <finalName>iSpigot-Practice-Addon</finalName>
         <defaultGoal>clean package</defaultGoal>
         <plugins>
             <plugin>
@@ -24,8 +21,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.7.0</version>
                 <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
                 </configuration>
             </plugin>
             <plugin>
@@ -55,43 +52,26 @@
 
     <repositories>
         <repository>
-            <id>spigotmc-repo</id>
-            <url>https://hub.spigotmc.org/nexus/content/groups/public/</url>
-        </repository>
-        <repository>
-            <id>sonatype</id>
-            <url>https://oss.sonatype.org/content/groups/public/</url>
+            <id>imanity-repo</id>
+            <url>https://maven.imanity.dev/repository/imanity-libraries/</url>
         </repository>
     </repositories>
 
     <dependencies>
+        <!-- ImanitySpigot API -->
         <dependency>
-            <groupId>leegod.ispigot</groupId>
-            <artifactId>ispigot</artifactId>
-            <scope>system</scope>
-            <version>1.0</version>
-            <systemPath>${project.basedir}/libs/ispigot.jar</systemPath>
+            <groupId>org.imanity.imanityspigot</groupId>
+            <artifactId>api</artifactId>
+            <version>2021.09.2b1</version>
+            <scope>provided</scope>
         </dependency>
+        <!-- Original PaperSpigot -->
         <dependency>
-            <groupId>strikepractice</groupId>
-            <artifactId>strikepractice</artifactId>
-            <scope>system</scope>
-            <version>1.0</version>
-            <systemPath>${project.basedir}/libs/StrikePracticeAPI.jar</systemPath>
-        </dependency>
-        <dependency>
-            <groupId>mpractice</groupId>
-            <artifactId>mpractice</artifactId>
-            <scope>system</scope>
-            <version>1.0</version>
-            <systemPath>${project.basedir}/libs/mPractice.jar</systemPath>
-        </dependency>
-        <dependency>
-            <groupId>propractice</groupId>
-            <artifactId>propractice</artifactId>
-            <scope>system</scope>
-            <version>1.0</version>
-            <systemPath>${project.basedir}/libs/ProPractice.jar</systemPath>
+            <groupId>org.imanity.paperspigot</groupId>
+            <artifactId>paper1.8.8</artifactId>
+            <version>1.8.8</version>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
+
 </project>
