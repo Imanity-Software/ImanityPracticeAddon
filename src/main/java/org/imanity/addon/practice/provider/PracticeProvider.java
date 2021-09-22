@@ -24,7 +24,7 @@ public abstract class PracticeProvider {
         String profile = ImanityPracticeAddon.getInstance().getProfileFromKit(kitName);
         KnockbackService knockbackService = this.plugin.getServer().imanity().getKnockbackService();
 
-        Knockback knockback = knockbackService.getKnockbackByName(profile == null ? ImanityPracticeAddon.getDefault() : profile);
+        Knockback knockback = knockbackService.getKnockbackByName(profile);
         knockbackService.setKnockback(player, knockback);
     }
 }
