@@ -20,7 +20,6 @@ public final class ImanityPracticeAddon extends JavaPlugin {
     private static ImanityPracticeAddon instance;
 
     public static final Map<String, String> KNOCKBACK_PROFILES = new ConcurrentHashMap<>();
-    private static String DEFAULT = "none";
 
     private PracticeProvider currentProvider;
 
@@ -33,7 +32,7 @@ public final class ImanityPracticeAddon extends JavaPlugin {
         long start = System.currentTimeMillis();
         instance = this;
 
-        this.getCommand("practice-addon").setExecutor(new AddonCommand());
+        getCommand("practice-addon").setExecutor(new AddonCommand());
         load();
 
         Set<PracticeProvider> practiceProviders = new HashSet<>();
@@ -46,12 +45,10 @@ public final class ImanityPracticeAddon extends JavaPlugin {
                 this.currentProvider = provider;
             }
         }
-
         if (this.currentProvider == null) {
             warn("iSpigot Practice Addon could not find a suitable practice plugin to hook! Please confirm that you have installed one. Disabling plugin now..");
             Bukkit.getPluginManager().disablePlugin(this);
         }
-
         this.currentProvider.registerListeners();
         long end = System.currentTimeMillis();
         log("iSpigot Practice Addon has been loaded in " + (end - start) + "ms. Current practice plugin: " + this.currentProvider.getRequiredPlugin());
@@ -60,7 +57,6 @@ public final class ImanityPracticeAddon extends JavaPlugin {
     @Override
     public void onDisable() {
         KNOCKBACK_PROFILES.clear();
-        this.configuration.save();
     }
 
     public String getProfileFromKit(String kitName) {
@@ -77,11 +73,6 @@ public final class ImanityPracticeAddon extends JavaPlugin {
         for (String key : section.getKeys(false)) {
             KNOCKBACK_PROFILES.put(key, section.getString(key));
         }
-
-        DEFAULT = configuration.getConfig().getString("default-knockback");
-        if (DEFAULT == null) {
-            instance.getLogger().warning("The default knockback is unreadable.");
-        }
     }
 
     public void save() {
@@ -94,10 +85,6 @@ public final class ImanityPracticeAddon extends JavaPlugin {
 
     public static void warn(String message) {
         instance.getLogger().warning(message);
-    }
-
-    public static String getDefault() {
-        return DEFAULT;
     }
 
     public static ImanityPracticeAddon getInstance() {

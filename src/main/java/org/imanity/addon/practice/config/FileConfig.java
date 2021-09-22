@@ -9,14 +9,12 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public class FileConfig {
 
-	private File file;
+	private final File file;
+	private final FileConfiguration config;
 
 	public File getFile() {
 		return this.file;
 	}
-
-
-	private FileConfiguration config;
 
 	public FileConfiguration getConfig() {
 		return this.config;
@@ -38,7 +36,6 @@ public class FileConfig {
 				plugin.saveResource(fileName, false);
 			}
 		}
-
 		this.config = YamlConfiguration.loadConfiguration(this.file);
 	}
 
