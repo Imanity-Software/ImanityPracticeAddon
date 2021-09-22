@@ -18,7 +18,6 @@ import java.util.concurrent.ConcurrentHashMap;
 public final class ImanityPracticeAddon extends JavaPlugin {
 
     private static ImanityPracticeAddon instance;
-
     public static final Map<String, String> KNOCKBACK_PROFILES = new ConcurrentHashMap<>();
 
     private PracticeProvider currentProvider;
@@ -30,6 +29,10 @@ public final class ImanityPracticeAddon extends JavaPlugin {
     @Override
     public void onEnable() {
         long start = System.currentTimeMillis();
+        if (!isServerRunningImanitySpigot3()) {
+            warn("This server is not running ImanitySpigot3, ImanityPracticeAddon need it to work! Disabling the plugin...");
+            getServer().getPluginManager().disablePlugin(this);
+        }
         instance = this;
 
         getCommand("practice-addon").setExecutor(new AddonCommand(this));
@@ -46,12 +49,11 @@ public final class ImanityPracticeAddon extends JavaPlugin {
             }
         }
         if (this.currentProvider == null) {
-            warn("iSpigot Practice Addon could not find a suitable practice plugin to hook! Please confirm that you have installed one. Disabling plugin now..");
-            Bukkit.getPluginManager().disablePlugin(this);
+            warn("ImanityPracticeAddon could not find a suitable practice plugin to hook! Please confirm that you have installed one. Disabling plugin now..");
+            getServer().getPluginManager().disablePlugin(this);
         }
         this.currentProvider.registerListeners();
-        long end = System.currentTimeMillis();
-        log("iSpigot Practice Addon has been loaded in " + (end - start) + "ms. Current practice plugin: " + this.currentProvider.getRequiredPlugin());
+        log("ImanityPracticeAddon has been loaded in " + (System.currentTimeMillis() - start) + "ms. Current practice plugin: " + this.currentProvider.getRequiredPlugin());
     }
 
     @Override
@@ -89,5 +91,14 @@ public final class ImanityPracticeAddon extends JavaPlugin {
 
     public static ImanityPracticeAddon getInstance() {
         return instance;
+    }
+
+    private boolean isServerRunningImanitySpigot3() {
+        try {
+            Class.forName("org.imanity.imanityspigot.ImanitySpigot");
+            return true;
+        } catch (ClassNotFoundException exception) {
+            return false;
+        }
     }
 }
