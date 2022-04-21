@@ -1,6 +1,6 @@
 # ImanityPracticeAddon - Plugin (Bukkit)
 > This addon targets our special customers that have a public Practice plugin but need a kit-specific knockback profile system. 
-> To in order to use this addon you have to purchase/run [ImanitySpigot3](https://imanity.dev/imanityspigot)
+> In order to use this addon you have to purchase [ImanitySpigot3](https://imanity.dev/imanityspigot) and run it on your server
 
 This plugin is for our clients that are using know Practice plugins. If you are a developer and you want to create your custom plugin for it, or others thing related to ImanitySpigot3, you can just use our [API](https://docs.imanity.dev/books/imanityspigot-3/chapter/developer-api)!
 
@@ -8,6 +8,7 @@ This plugin is for our clients that are using know Practice plugins. If you are 
 * [StrikePractice](https://www.spigotmc.org/resources/strikepractice-%E2%80%93-1v1-2v2-pvp-bots-tournaments-parties-kit-editor-gui-best-of-rounds-and-more.46906/)
 * [~~mPractice~~](https://www.mc-market.org/resources/14344/) (Waiting API)
 * [ProPractice](https://www.spigotmc.org/resources/propractice-ffa-queueing-builduhc-combo-sumo-parties-party-events-scoreboard.27303/)
+* [Yang](https://www.mc-market.org/resources/21338/)
 * [FrostPractice](https://elb1to.me/frost/) **YOU DO NOT NEED THIS PLUGIN, FROSTPRACTICE HAS HIS OWN SUPPORT FOR IMANITYSPIGOT**
 * *Plugin that you need??*
 

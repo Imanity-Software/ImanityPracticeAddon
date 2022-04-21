@@ -5,6 +5,7 @@ softdepend:
   - StrikePractice
   - mPractice
   - ProPractice
+  - Yang
 commands:
   practice-addon:
     aliases: [ispigotpracticeaddon, imanitypracticeaddon, practiceaddon]

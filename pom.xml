@@ -72,6 +72,28 @@
             <version>1.8.8</version>
             <scope>provided</scope>
         </dependency>
+
+        <dependency>
+            <groupId>strikepractice</groupId>
+            <artifactId>strikepractice</artifactId>
+            <scope>system</scope>
+            <version>1.0</version>
+            <systemPath>${project.basedir}/libs/strikepractice-3.3.2.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>propractice</groupId>
+            <artifactId>propractice</artifactId>
+            <scope>system</scope>
+            <version>1.0</version>
+            <systemPath>${project.basedir}/libs/ProPractice.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>net.pandamc.yang</groupId>
+            <artifactId>Yang</artifactId>
+            <scope>system</scope>
+            <version>1.0</version>
+            <systemPath>${project.basedir}/libs/YangAPI-1.0-SNAPSHOT.jar</systemPath>
+        </dependency>
     </dependencies>
 
 </project>

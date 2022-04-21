@@ -1,14 +1,13 @@
 package org.imanity.addon.practice;
 
-import org.bukkit.Bukkit;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.imanity.addon.practice.command.AddonCommand;
 import org.imanity.addon.practice.config.FileConfig;
 import org.imanity.addon.practice.provider.PracticeProvider;
-import org.imanity.addon.practice.provider.impl.StrikePracticeProviderImpl;
 import org.imanity.addon.practice.provider.impl.ProPracticeProviderImpl;
-import org.imanity.addon.practice.provider.impl.mPracticeProviderImpl;
+import org.imanity.addon.practice.provider.impl.StrikePracticeProviderImpl;
+import org.imanity.addon.practice.provider.impl.YangPracticeProviderImpl;
 
 import java.util.HashSet;
 import java.util.Map;
@@ -29,30 +28,37 @@ public final class ImanityPracticeAddon extends JavaPlugin {
     @Override
     public void onEnable() {
         long start = System.currentTimeMillis();
-        if (!isServerRunningImanitySpigot3()) {
+
+        if (!this.isServerRunningImanitySpigot3()) {
             warn("This server is not running ImanitySpigot3, ImanityPracticeAddon need it to work! Disabling the plugin...");
-            getServer().getPluginManager().disablePlugin(this);
+            this.getServer().getPluginManager().disablePlugin(this);
+            return;
         }
         instance = this;
 
-        getCommand("practice-addon").setExecutor(new AddonCommand(this));
-        load();
+        this.getCommand("practice-addon").setExecutor(new AddonCommand(this));
+        this.load();
 
         Set<PracticeProvider> practiceProviders = new HashSet<>();
         practiceProviders.add(new StrikePracticeProviderImpl(this));
-        //practiceProviders.add(new mPracticeProviderImpl(this)); // TODO: Waiting API
         practiceProviders.add(new ProPracticeProviderImpl(this));
+        practiceProviders.add(new YangPracticeProviderImpl(this));
+        //practiceProviders.add(new mPracticeProviderImpl(this)); // TODO: Waiting API
 
         for (PracticeProvider provider : practiceProviders) {
-            if (Bukkit.getPluginManager().isPluginEnabled(provider.getRequiredPlugin())) {
+            if (this.getServer().getPluginManager().isPluginEnabled(provider.getRequiredPlugin())) {
                 this.currentProvider = provider;
+                log("ImanityPracticeAddon founded " + provider.getRequiredPlugin() + " using it as provider.");
+                break;
             }
         }
         if (this.currentProvider == null) {
             warn("ImanityPracticeAddon could not find a suitable practice plugin to hook! Please confirm that you have installed one. Disabling plugin now..");
-            getServer().getPluginManager().disablePlugin(this);
+            this.getServer().getPluginManager().disablePlugin(this);
+            return;
         }
         this.currentProvider.registerListeners();
+
         log("ImanityPracticeAddon has been loaded in " + (System.currentTimeMillis() - start) + "ms. Current practice plugin: " + this.currentProvider.getRequiredPlugin());
     }
 
@@ -71,7 +77,7 @@ public final class ImanityPracticeAddon extends JavaPlugin {
         KNOCKBACK_PROFILES.clear();
         this.configuration = new FileConfig(this, "config.yml");
 
-        ConfigurationSection section = configuration.getConfig().getConfigurationSection("knockback");
+        ConfigurationSection section = this.configuration.getConfig().getConfigurationSection("knockback");
         for (String key : section.getKeys(false)) {
             KNOCKBACK_PROFILES.put(key, section.getString(key));
         }
@@ -81,18 +87,6 @@ public final class ImanityPracticeAddon extends JavaPlugin {
         this.configuration.save();
     }
 
-    public static void log(String message) {
-        instance.getLogger().info(message);
-    }
-
-    public static void warn(String message) {
-        instance.getLogger().warning(message);
-    }
-
-    public static ImanityPracticeAddon getInstance() {
-        return instance;
-    }
-
     private boolean isServerRunningImanitySpigot3() {
         try {
             Class.forName("org.imanity.imanityspigot.ImanitySpigot");
@@ -100,5 +94,17 @@ public final class ImanityPracticeAddon extends JavaPlugin {
         } catch (ClassNotFoundException exception) {
             return false;
         }
+    }
+
+    public static ImanityPracticeAddon getInstance() {
+        return instance;
+    }
+
+    public static void log(String message) {
+        instance.getLogger().info(message);
+    }
+
+    public static void warn(String message) {
+        instance.getLogger().warning(message);
     }
 }

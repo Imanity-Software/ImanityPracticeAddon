@@ -1,6 +1,5 @@
 package org.imanity.addon.practice.provider.impl;
 
-import org.bukkit.Bukkit;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.imanity.addon.practice.ImanityPracticeAddon;
@@ -20,7 +19,7 @@ public class ProPracticeProviderImpl extends PracticeProvider {
 
     @Override
     public void registerListeners() {
-        Bukkit.getPluginManager()
+        this.plugin.getServer().getPluginManager()
                 .registerEvents(new Listener() {
                     @EventHandler
                     public void onSelectKit(PlayerSelectKitEvent event) {

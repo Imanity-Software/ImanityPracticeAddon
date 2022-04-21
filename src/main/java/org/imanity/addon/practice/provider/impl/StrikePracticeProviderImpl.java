@@ -1,13 +1,13 @@
 package org.imanity.addon.practice.provider.impl;
 
 import ga.strikepractice.events.KitSelectEvent;
-import org.bukkit.Bukkit;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.imanity.addon.practice.ImanityPracticeAddon;
 import org.imanity.addon.practice.provider.PracticeProvider;
 
 public class StrikePracticeProviderImpl extends PracticeProvider {
+
     public StrikePracticeProviderImpl(ImanityPracticeAddon plugin) {
         super(plugin);
     }
@@ -19,7 +19,7 @@ public class StrikePracticeProviderImpl extends PracticeProvider {
 
     @Override
     public void registerListeners() {
-        Bukkit.getPluginManager()
+        this.plugin.getServer().getPluginManager()
                 .registerEvents(new Listener() {
                     @EventHandler
                     public void onKitSelect(KitSelectEvent event) {

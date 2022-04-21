@@ -15,7 +15,7 @@ public abstract class PracticeProvider {
     public abstract String getRequiredPlugin();
 
     public String getName() {
-        return getRequiredPlugin();
+        return this.getRequiredPlugin();
     }
 
     public abstract void registerListeners();
