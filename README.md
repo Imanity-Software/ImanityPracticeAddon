@@ -19,13 +19,15 @@ You can submit a request to us to support more practice plugins, we would integr
 You can find all the information about **ImanitySpigot**,
 as well as a link to the discord server by clicking on [this link](https://www.mc-market.org/resources/10770/).
 
+[Support Discord Here](https://discord.gg/GBZKR3n)
+
 ## Showcase
 
 *Coming soon*
 
 ## How to install
 
-1. Download the jar [here]()
+1. Download the jar [here](https://github.com/Imanity-Software/ImanityPracticeAddon/releases)
 2. Drag it in your `/plugins` folder
 3. Start your server
 4. Configure the plugin in the `/plugins/ImanityPracticeAddon/config.yml` file
