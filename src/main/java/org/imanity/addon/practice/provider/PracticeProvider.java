@@ -1,9 +1,9 @@
 package org.imanity.addon.practice.provider;
 
+import dev.imanity.knockback.api.Knockback;
+import dev.imanity.knockback.api.KnockbackService;
 import org.bukkit.entity.Player;
 import org.imanity.addon.practice.ImanityPracticeAddon;
-import org.imanity.imanityspigot.knockback.Knockback;
-import org.imanity.imanityspigot.knockback.KnockbackService;
 
 public abstract class PracticeProvider {
     protected ImanityPracticeAddon plugin;

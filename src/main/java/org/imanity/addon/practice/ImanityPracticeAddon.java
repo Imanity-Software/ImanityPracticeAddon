@@ -29,8 +29,8 @@ public final class ImanityPracticeAddon extends JavaPlugin {
     public void onEnable() {
         long start = System.currentTimeMillis();
 
-        if (!this.isServerRunningImanitySpigot3()) {
-            warn("This server is not running ImanitySpigot3, ImanityPracticeAddon need it to work! Disabling the plugin...");
+        if (!this.isServerRunningImanityKnockback()) {
+            warn("This server is not running ImanitySpigot3 or ImanityKnockback Plugin, ImanityPracticeAddon need it to work! Disabling the plugin...");
             this.getServer().getPluginManager().disablePlugin(this);
             return;
         }
@@ -87,9 +87,9 @@ public final class ImanityPracticeAddon extends JavaPlugin {
         this.configuration.save();
     }
 
-    private boolean isServerRunningImanitySpigot3() {
+    private boolean isServerRunningImanityKnockback() {
         try {
-            Class.forName("org.imanity.imanityspigot.ImanitySpigot");
+            Class.forName("dev.imanity.imanityspigot.knockback.Knockback");
             return true;
         } catch (ClassNotFoundException exception) {
             return false;
