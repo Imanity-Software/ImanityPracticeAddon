@@ -8,7 +8,7 @@ import org.imanity.addon.practice.ImanityPracticeAddon;
 public abstract class PracticeProvider {
     protected ImanityPracticeAddon plugin;
 
-    public PracticeProvider(ImanityPracticeAddon plugin) {
+    public PracticeProvider(final ImanityPracticeAddon plugin) {
         this.plugin = plugin;
     }
 
@@ -18,13 +18,14 @@ public abstract class PracticeProvider {
         return this.getRequiredPlugin();
     }
 
-    public abstract void registerListeners();
+    public abstract void registerKnockbackImplementation();
 
-    public void pickKitKnockback(Player player, String kitName) {
-        String profile = ImanityPracticeAddon.getInstance().getProfileFromKit(kitName);
-        KnockbackService knockbackService = this.plugin.getServer().imanity().getKnockbackService();
+    public void pickKitKnockback(final Player player, final String kitName) {
+        final String profile = this.plugin.getProfileFromKit(kitName);
+        final KnockbackService knockbackService = this.plugin.getServer().imanity().getKnockbackService();
 
-        Knockback knockback = knockbackService.getKnockbackByName(profile);
+        // Use global knockback if profile doesnt exist
+        final Knockback knockback = knockbackService.getKnockbackByName(profile);
         knockbackService.setKnockback(player, knockback);
     }
 }

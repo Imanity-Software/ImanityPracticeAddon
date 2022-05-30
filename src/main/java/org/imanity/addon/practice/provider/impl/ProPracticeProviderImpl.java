@@ -8,7 +8,7 @@ import sv.file14.propractice.api.events.PlayerSelectKitEvent;
 
 public class ProPracticeProviderImpl extends PracticeProvider {
 
-    public ProPracticeProviderImpl(ImanityPracticeAddon plugin) {
+    public ProPracticeProviderImpl(final ImanityPracticeAddon plugin) {
         super(plugin);
     }
 
@@ -18,11 +18,11 @@ public class ProPracticeProviderImpl extends PracticeProvider {
     }
 
     @Override
-    public void registerListeners() {
+    public void registerKnockbackImplementation() {
         this.plugin.getServer().getPluginManager()
                 .registerEvents(new Listener() {
                     @EventHandler
-                    public void onSelectKit(PlayerSelectKitEvent event) {
+                    public void onPlayerSelectKit(PlayerSelectKitEvent event) {
                         pickKitKnockback(event.getPlayer(), event.getKit());
                     }
                 }, this.plugin);

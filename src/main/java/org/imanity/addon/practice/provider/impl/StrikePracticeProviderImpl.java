@@ -8,7 +8,7 @@ import org.imanity.addon.practice.provider.PracticeProvider;
 
 public class StrikePracticeProviderImpl extends PracticeProvider {
 
-    public StrikePracticeProviderImpl(ImanityPracticeAddon plugin) {
+    public StrikePracticeProviderImpl(final ImanityPracticeAddon plugin) {
         super(plugin);
     }
 
@@ -18,7 +18,7 @@ public class StrikePracticeProviderImpl extends PracticeProvider {
     }
 
     @Override
-    public void registerListeners() {
+    public void registerKnockbackImplementation() {
         this.plugin.getServer().getPluginManager()
                 .registerEvents(new Listener() {
                     @EventHandler

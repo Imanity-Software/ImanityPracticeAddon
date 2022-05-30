@@ -3,108 +3,101 @@ package org.imanity.addon.practice;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.imanity.addon.practice.command.AddonCommand;
-import org.imanity.addon.practice.config.FileConfig;
 import org.imanity.addon.practice.provider.PracticeProvider;
 import org.imanity.addon.practice.provider.impl.ProPracticeProviderImpl;
 import org.imanity.addon.practice.provider.impl.StrikePracticeProviderImpl;
 import org.imanity.addon.practice.provider.impl.YangPracticeProviderImpl;
 
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
-import java.util.concurrent.ConcurrentHashMap;
 
 public final class ImanityPracticeAddon extends JavaPlugin {
 
-    private static ImanityPracticeAddon instance;
-    public static final Map<String, String> KNOCKBACK_PROFILES = new ConcurrentHashMap<>();
-
+    private final Map<String, String> knockbackProfiles = new HashMap<>();
     private PracticeProvider currentProvider;
-
-    public PracticeProvider getCurrentProvider() {
-        return this.currentProvider;
-    }
 
     @Override
     public void onEnable() {
-        long start = System.currentTimeMillis();
+        final long start = System.currentTimeMillis();
 
         if (!this.isServerRunningImanityKnockback()) {
-            warn("This server is not running ImanitySpigot3 or ImanityKnockback Plugin, ImanityPracticeAddon need it to work! Disabling the plugin...");
+            this.warn("This server is not running ImanitySpigot3 or ImanityKnockback Plugin, ImanityPracticeAddon need it to work! " +
+                    "Disabling the plugin...");
             this.getServer().getPluginManager().disablePlugin(this);
             return;
         }
-        instance = this;
-
+        this.loadProfiles();
         this.getCommand("practice-addon").setExecutor(new AddonCommand(this));
-        this.load();
 
-        Set<PracticeProvider> practiceProviders = new HashSet<>();
+        final Set<PracticeProvider> practiceProviders = new HashSet<>();
         practiceProviders.add(new StrikePracticeProviderImpl(this));
         practiceProviders.add(new ProPracticeProviderImpl(this));
         practiceProviders.add(new YangPracticeProviderImpl(this));
         //practiceProviders.add(new mPracticeProviderImpl(this)); // TODO: Waiting API
 
-        for (PracticeProvider provider : practiceProviders) {
+        for (final PracticeProvider provider : practiceProviders) {
             if (this.getServer().getPluginManager().isPluginEnabled(provider.getRequiredPlugin())) {
                 this.currentProvider = provider;
-                log("ImanityPracticeAddon founded " + provider.getRequiredPlugin() + " using it as provider.");
+                this.log("ImanityPracticeAddon founded " + provider.getRequiredPlugin() + " using it as provider.");
                 break;
             }
         }
         if (this.currentProvider == null) {
-            warn("ImanityPracticeAddon could not find a suitable practice plugin to hook! Please confirm that you have installed one. Disabling plugin now..");
+            this.warn("ImanityPracticeAddon could not find a suitable practice plugin to hook! Please confirm that you have installed one" +
+                    ". Disabling plugin now..");
             this.getServer().getPluginManager().disablePlugin(this);
             return;
         }
-        this.currentProvider.registerListeners();
+        this.currentProvider.registerKnockbackImplementation();
 
-        log("ImanityPracticeAddon has been loaded in " + (System.currentTimeMillis() - start) + "ms. Current practice plugin: " + this.currentProvider.getRequiredPlugin());
+        this.log("ImanityPracticeAddon has been loaded in " + (System.currentTimeMillis() - start) + "ms. Current practice plugin: " + this.currentProvider.getRequiredPlugin());
     }
 
     @Override
     public void onDisable() {
-        KNOCKBACK_PROFILES.clear();
+        this.knockbackProfiles.clear();
     }
 
-    public String getProfileFromKit(String kitName) {
-        return KNOCKBACK_PROFILES.getOrDefault(kitName, null);
+    public Map<String, String> getKnockbackProfiles() {
+        return this.knockbackProfiles;
     }
 
-    private FileConfig configuration;
+    public PracticeProvider getCurrentProvider() {
+        return this.currentProvider;
+    }
 
-    public void load() {
-        KNOCKBACK_PROFILES.clear();
-        this.configuration = new FileConfig(this, "config.yml");
+    public String getProfileFromKit(final String kitName) {
+        return this.knockbackProfiles.getOrDefault(kitName, null);
+    }
 
-        ConfigurationSection section = this.configuration.getConfig().getConfigurationSection("knockback");
-        for (String key : section.getKeys(false)) {
-            KNOCKBACK_PROFILES.put(key, section.getString(key));
+    public void loadProfiles() {
+        this.getConfig().addDefault("knockback.builduhc", "builduhc");
+        this.getConfig().options().copyDefaults(true);
+        this.saveConfig();
+        this.knockbackProfiles.clear();
+
+        final ConfigurationSection section = this.getConfig().getConfigurationSection("knockback");
+        for (final String key : this.getConfig().getConfigurationSection("knockback").getKeys(false)) {
+            this.knockbackProfiles.put(key, section.getString(key));
         }
-    }
-
-    public void save() {
-        this.configuration.save();
     }
 
     private boolean isServerRunningImanityKnockback() {
         try {
-            Class.forName("dev.imanity.imanityspigot.knockback.Knockback");
+            Class.forName("dev.imanity.knockback.api.Knockback");
             return true;
         } catch (ClassNotFoundException exception) {
             return false;
         }
     }
 
-    public static ImanityPracticeAddon getInstance() {
-        return instance;
+    public void log(final String message) {
+        this.getLogger().info(message);
     }
 
-    public static void log(String message) {
-        instance.getLogger().info(message);
-    }
-
-    public static void warn(String message) {
-        instance.getLogger().warning(message);
+    public void warn(final String message) {
+        this.getLogger().warning(message);
     }
 }

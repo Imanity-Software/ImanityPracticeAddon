@@ -1,14 +1,12 @@
 package org.imanity.addon.practice.provider.impl;
 
 import net.pandamc.yang.YangAPI;
-import net.pandamc.yang.knockback.KnockbackProfiler;
-import org.bukkit.entity.Player;
 import org.imanity.addon.practice.ImanityPracticeAddon;
 import org.imanity.addon.practice.provider.PracticeProvider;
 
-public class YangPracticeProviderImpl extends PracticeProvider implements KnockbackProfiler {
+public class YangPracticeProviderImpl extends PracticeProvider {
 
-    public YangPracticeProviderImpl(ImanityPracticeAddon plugin) {
+    public YangPracticeProviderImpl(final ImanityPracticeAddon plugin) {
         super(plugin);
     }
 
@@ -18,12 +16,7 @@ public class YangPracticeProviderImpl extends PracticeProvider implements Knockb
     }
 
     @Override
-    public void registerListeners() {
-        YangAPI.setKnockbackProfile(this);
-    }
-
-    @Override
-    public void setKnockback(Player player, String kitName) {
-        this.pickKitKnockback(player, kitName);
+    public void registerKnockbackImplementation() {
+        YangAPI.setKnockbackProfile(this::pickKitKnockback);
     }
 }

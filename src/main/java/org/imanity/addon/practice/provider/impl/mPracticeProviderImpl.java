@@ -5,7 +5,7 @@ import org.imanity.addon.practice.provider.PracticeProvider;
 
 public class mPracticeProviderImpl extends PracticeProvider {
 
-    public mPracticeProviderImpl(ImanityPracticeAddon plugin) {
+    public mPracticeProviderImpl(final ImanityPracticeAddon plugin) {
         super(plugin);
     }
 
@@ -15,7 +15,7 @@ public class mPracticeProviderImpl extends PracticeProvider {
     }
 
     @Override
-    public void registerListeners() {
+    public void registerKnockbackImplementation() {
         // TODO: waiting API
         /*Bukkit.getPluginManager()
                 .registerEvents(new Listener() {
